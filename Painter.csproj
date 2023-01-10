@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>11</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SixLabors.ImageSharp" />
+    <None Remove="ILGPU" />
+    <None Remove="ILGPU.Algorithms" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+    <PackageReference Include="ILGPU" Version="1.3.1" />
+    <PackageReference Include="ILGPU.Algorithms" Version="1.3.1" />
+  </ItemGroup>
+</Project>
