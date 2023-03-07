@@ -4,7 +4,16 @@ using System;
 using System.Diagnostics;
 
 var context = Context.Create(builder => builder.Default().EnableAlgorithms());
-var device = context.GetPreferredDevice(preferCPU: false).CreateAccelerator(context);
+
+// foreach (var d in context.Devices)
+// {
+//     using var a = d.CreateAccelerator(context);
+//     Console.WriteLine(a.Name);
+// }
+//
+// return;
+
+var device = context.GetPreferredDevice(preferCPU: true).CreateAccelerator(context);
 
 // Triangles
 {
@@ -24,14 +33,14 @@ var device = context.GetPreferredDevice(preferCPU: false).CreateAccelerator(cont
 }
 
 // Similarity
-{
-    var leena1 = Canvas.Create(device, "b.png");
-    var leena2 = Canvas.Create(device, "a.png");
-    
-    var s1 = leena1.Similarity(leena2);
-    var s2 = leena2.Similarity(leena1);
-
-    Debug.Assert(Math.Abs(s1 - s2) < float.Epsilon);
-
-    Console.WriteLine(s1);
-}
+// {
+//     var leena1 = Canvas.Create(device, "b.png");
+//     var leena2 = Canvas.Create(device, "a.png");
+//     
+//     var s1 = leena1.Similarity(leena2);
+//     var s2 = leena2.Similarity(leena1);
+//
+//     Debug.Assert(Math.Abs(s1 - s2) < float.Epsilon);
+//
+//     Console.WriteLine(s1);
+// }
